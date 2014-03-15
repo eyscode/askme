@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px 0;
+    overflow: hidden;
+    box-shadow: inset 0 -1px 0 #cacaca;
+    background: #eaeaea;
+}
+
+h3 {
+    margin: 20px 0;
+    font-family: sans-serif;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+    float: left;
+    padding: 6px;
+    background: #2291dc;
+}
+
+.search {
+    float: left;
+    margin-left: 20px;
+}
+
+.search input[type='text'] {
+    border: none;
+    padding: 10px;
+    outline: none;
+    width: 400px;
+}
+
+.search input[type='submit'] {
+    background: none;
+    outline: none;
+    border: 1px solid #2291dc;
+    padding: 9px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #2291dc;
+}
+
+.container {
+    margin: 0 auto;
+    width: 750px;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.preguntas li {
+    list-style: none;
+    background: whitesmoke;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #2291dc;
+    cursor: pointer;
+}
+
+.preguntas li.no-ans {
+    border: none;
+    cursor: auto;
+}
+
+.preguntas li:hover {
+    border-color: crimson;
+}
+
+.preguntas li:hover .ask-title {
+    color: crimson;
+}
+
+.ask-title {
+    color: #4799a3;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+
+.ask-summary {
+    font-size: 14px;
+    color: rgb(36, 36, 36);
+}
+
+.clearfix {
+    clear: both;
+}
+
+.menu {
+    width: 20%;
+    float: left;
+    height: 400px;
+}
+
+.menu li a, .menu li {
+    list-style: none;
+    font-family: sans-serif;
+    margin: 10px 0;
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+}
+
+.menu li.selected {
+    font-weight: bold;
+}
+
+.midle {
+    width: 55%;
+    float: left;
+}
+
+.otros {
+    width: 25%;
+    float: left;
+}
+
+p.datetime {
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #525252;
+    margin: 5px 0;
+}
+
+.ask-search {
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: normal;
+    color: rgb(65, 65, 65);
+}
+
+.ask-search .word {
+    color: rgb(58, 133, 192);
+    font-weight: bold;
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}

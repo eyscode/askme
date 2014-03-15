@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio - Listado de Preguntas</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css"/>
+</head>
+<body>
+<header>
+    <div class="container">
+
+        <a class="logo" href="{% url "index" %}">Askme</a>
+
+        <form class="search" action="{% url 'index' %}">
+            <input name="q" type="text" placeholder="Escribe tu pregunta..."/>
+            <input type="submit" value="Buscar"/>
+        </form>
+    </div>
+</header>
+<div class="content">
+    <div class=" container">
+        <ul class="menu">
+            <li class="{% block menu_home %}{% endblock %}"><a href="{% url "index" %}">Últimas preguntas</a></li>
+            <li class="{% block menu_ask %}{% endblock %}"><a href="{% url "ask" %}">Hacer una pregunta</a></li>
+            <li class=""><a href="#">Notificaciones</a></li>
+            <li class=""><a href="#">Mensajes</a></li>
+        </ul>
+        <div class="midle">
+            {% block content_midle %}
+
+            {% endblock %}
+        </div>
+        <div class="otros"></div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>

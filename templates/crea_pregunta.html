@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block menu_ask %}
+    selected
+{% endblock %}
+
+{% block content_midle %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Title</label>
+            <input type="text" name="title" required/>
+        </p>
+
+        <p>
+            <label>Contenido</label>
+            <textarea name="content" cols="30" rows="10" required></textarea>
+        </p>
+        <input type="submit" value="Crear"/>
+    </form>
+{% endblock %}

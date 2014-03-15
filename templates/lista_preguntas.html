@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block menu_home %}
+    selected
+{% endblock %}
+
+{% block content_midle %}
+    {% if q %}
+        <h5 class="ask-search">Resultados para <span class="word">"{{ q }}"</span></h5>
+    {% endif %}
+    <ul class="preguntas">
+        {% for pregunta in preguntas %}
+            <li>
+                <div>
+                    <a class="ask-title" href="#">{{ pregunta.title }}</a>
+
+                    <p class="datetime">{{ pregunta.created_at }}</p>
+
+                    <p class="ask-summary">{{ pregunta.content|truncatechars:'25' }}...</p>
+                </div>
+            </li>
+        {% empty %}
+            {% if q %}
+                <li class="no-ans">No hay resultados</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
