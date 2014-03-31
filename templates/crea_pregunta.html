@@ -6,17 +6,9 @@
 {% endblock %}
 
 {% block content_midle %}
-    <form method="post">
+    <form method="post" class="form-task">
         {% csrf_token %}
-        <p>
-            <label>Title</label>
-            <input type="text" name="title" required/>
-        </p>
-
-        <p>
-            <label>Contenido</label>
-            <textarea name="content" cols="30" rows="10" required></textarea>
-        </p>
+        {{ form.as_p }}
         <input type="submit" value="Crear"/>
     </form>
 {% endblock %}

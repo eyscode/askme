@@ -149,3 +149,28 @@ p.datetime {
         width: 970px;
     }
 }
+
+.form-task {
+    background: #eaeaea;
+    padding: 20px;
+}
+
+.form-task p {
+    overflow: hidden;
+}
+
+.form-task p label {
+    float: left;
+    width: 100px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.form-task p input[type=text], .form-task p textarea {
+    width: 350px;
+    border: none;
+    min-height: 22px;
+    outline: none;
+}
