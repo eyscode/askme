@@ -1,23 +1,38 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
+from web.forms import QuestionForm
 from web.mixins import SearchMixin
-from web.models import Pregunta
+from web.models import Question
 
 
-class ListAsk(SearchMixin, ListView):
-    model = Pregunta
-    template_name = 'lista_preguntas.html'
-    context_object_name = 'preguntas'
+class ListQuestionView(SearchMixin, ListView):
+    model = Question
+    template_name = 'list_question.html'
+    context_object_name = 'questions'
 
     def get_context_data(self, **kwargs):
-        ctx = super(ListAsk, self).get_context_data(**kwargs)
+        ctx = super(ListQuestionView, self).get_context_data(**kwargs)
         ctx['q'] = self.request.GET.get('q')
         return ctx
 
+    def get_queryset(self):
+        return self.model.objects.all()[:5]
 
-class FormAsk(CreateView):
-    model = Pregunta
-    template_name = 'crea_pregunta.html'
+
+class CreateQuestionView(CreateView):
+    model = Question
+    template_name = 'create_question'
     success_url = reverse_lazy('index')
-    fields = ('title', 'content')
+    form_class = QuestionForm
+
+    def form_valid(self, form):
+        form.instance.user = User.objects.first()  # cambiar por self.request.user
+        return super(CreateQuestionView, self).form_valid(form)
+
+
+class DetailQuestionView(DetailView):
+    model = Question
+    template_name = 'detail_question.html'
+    context_object_name = 'question'

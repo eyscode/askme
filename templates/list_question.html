@@ -9,15 +9,15 @@
         <h5 class="ask-search">Resultados para <span class="word">"{{ q }}"</span></h5>
     {% endif %}
     <ul class="preguntas">
-        {% for pregunta in preguntas %}
+        {% for question in questions %}
             <li>
-                <div>
-                    <a class="ask-title" href="#">{{ pregunta.title }}</a>
+                <a class="ask-title" href="{% url 'detail-ask' question.id %}">
+                    <h4>{{ question.title }}</h4>
 
-                    <p class="datetime">{{ pregunta.created_at }}</p>
+                    <p class="datetime">{{ question.created_at }}</p>
 
-                    <p class="ask-summary">{{ pregunta.content|truncatechars:'25' }}...</p>
-                </div>
+                    <p class="ask-summary">{{ question.content|truncatechars:'25' }}...</p>
+                </a>
             </li>
         {% empty %}
             {% if q %}

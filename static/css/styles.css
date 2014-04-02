@@ -11,7 +11,7 @@ header {
 }
 
 h3 {
-    margin: 20px 0;
+    margin: 20px 0 10px;
     font-family: sans-serif;
 }
 
@@ -87,6 +87,7 @@ h3 {
 }
 
 .ask-summary {
+    margin-top: 5px;
     font-size: 14px;
     color: rgb(36, 36, 36);
 }
@@ -128,7 +129,7 @@ p.datetime {
     font-size: 12px;
     font-family: sans-serif;
     color: #525252;
-    margin: 5px 0;
+    margin: 5px 0 0;
 }
 
 .ask-search {
@@ -173,4 +174,103 @@ p.datetime {
     border: none;
     min-height: 22px;
     outline: none;
+}
+
+.btn-full {
+    border: none;
+    outline: none;
+    padding: 6px 15px;
+    color: white;
+    background: #2291dc;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-full:hover {
+    background: white;
+    color: #2291dc;
+}
+
+.number-ans {
+    padding: 15px 5px;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    background: whitesmoke;
+    color: #333;
+    font-size: 14px;
+}
+
+.body-quest {
+    padding: 15px 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.datetime-quest {
+    font-size: 12px;
+    font-family: sans-serif;
+    color: rgb(71, 71, 71);
+}
+
+.ans-points {
+    width: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+    float: left;
+}
+
+.ans-points-total {
+    padding: 3px 0;
+    background: #444;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+}
+
+.ans-points-up {
+    margin: 3px 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 12px solid #2291dc;
+    cursor: pointer;
+}
+
+.ans-points-up:hover {
+    border-bottom: 12px solid #444;
+}
+
+.ans-points-down {
+    margin: 3px 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 12px solid #2291dc;
+    cursor: pointer;
+}
+
+.ans-points-down:hover {
+    border-top: 12px solid #444;
+}
+
+.ans-content {
+    padding: 5px;
+}
+
+.ans-user {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.ans-desc {
+    float: left;
+    margin: 10px 0 0 10px;
+    width: 90%;
+}
+
+.ans-body {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    overflow: hidden;
 }
